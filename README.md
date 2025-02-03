@@ -21,40 +21,33 @@ Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Aus
 
 **Towards:**
 ```python
-from math import pow
-def time(slope, length):
+from math import powdef time(slope, length):
     speed = 20 # km/h
     speedmm = speed * 1000 / 60 # in m/min
-    if slope > 25: # ausreisser bereinigen
-        slope = 25
-    elif slope < -25:
-        slope = -25
+    slope = max(-25, min(25, slope))  # Begrenzung
 
-    if slope < 0: #-2:
+    if slope < 0:
         v = speedmm * pow(abs(slope), 1/3)
         return length / v # t = s / v (in m/min)
-    elif slope == 0: #>= -1 and slope <= 1:
+    elif slope == 0:
         v = speedmm
         return length / speedmm # t = s / v (in m/min)
     else:
         v = speedmm / pow(slope, 1/3)
         return length / v # t = s / v (in m/min)
 ```
+
 **Backwards:**
 ```python
-from math import pow
-def time(slope, length):
+from math import powdef time(slope, length):
     speed = 20 # km/h
     speedmm = speed * 1000 / 60 # in m/min
-    if slope > 25: # ausreisser bereinigen
-        slope = 25
-    elif slope < -25:
-        slope = -25
+    slope = max(-25, min(25, slope))  # Begrenzung
 
-    if slope < 0: #-2:
+    if slope < 0:
         v = speedmm / pow(abs(slope), 1/3)
         return length / v # t = s / v (in m/min)
-    elif slope == 0: #>= -1 and slope <= 1:
+    elif slope == 0:
         v = speedmm
         return length / speedmm # t = s / v (in m/min)
     else:
