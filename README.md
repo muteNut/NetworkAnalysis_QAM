@@ -59,7 +59,7 @@ Die Geschwindigkeit verteilt sich daher abhängig vom Gefälle wie folgt:
 <img src="img/times.png" alt="Diagramm von Geschwindigkeit auf y-Achse und Gefälle auf x-Achse" width="500"/>
 
 ##### Restrictions:
-Befahrbarkeit für Fahrrad erlaubt (realitätsnähe?)
+Befahrbarkeit für Fahrrad erlaubt (Realitätsnähe?)
 
 **Towards:**
 ```python
@@ -69,14 +69,7 @@ def restriction(bike):
 	else:
 		return True
 ```
-**Backwards:**
-```python
-def restriction(bike):
-	if bike == 1:
-		return True
-	else:
-		return False
-```
+**Backwards** ist das Field Script identisch, nur die Variable wird getauscht: statt *AccTow_Bike* wird *AccBkw_Bike* eingesetzt.
 
 #### DEM & ERW vorbereiten
 1. Pairwise Clip von DEM-Rasterdatensatz mit Region
