@@ -1,18 +1,19 @@
-# Netzwerkanalyse
+![image](https://github.com/user-attachments/assets/b1c46c75-1692-49ae-a0f1-462a503f3a75)# Netzwerkanalyse
 ## Vorgehensweise
 Allgemeine Methodologie für die Berechnung
 ### Vorbereitung
 Vorbereitung vom Datensatz in mehreren Schritten
 #### Gefälle für Bike-Network berechnen
-1. Herunterladen der [DTM-Rasterzellen](https://doi.org/10.48677/5b510b4a-f592-4c02-991f-012cb1a65ea9)
-2. Zusammenfügen der Rasterzellen (*Mosaic to New Raster*)
-3. Rasterzellen simplifizieren (*Focal Statistics, 10x10m mean*)
-4. Extrahieren der Start- und Endpunkte (*Feature Vertices To Points*)
-	- Layer mit Start Nodes
-	- Layer mit End Nodes
-5. Projizieren der Start- und End-Nodes auf DTM-Rasterzellen (*Extract Multi Values to Points*)
-6. Join an Linknetz (*Join Field, FROM-Node, TO-Node*)
-7. Gefälle berechnen: (Z_TO - Z_FROM) / !Shape_Length! x 100
+
+| Schritt | Beschreibung | Screenshot |
+|-|-|-|
+| 1 | Herunterladen der [DTM-Rasterzellen](https://doi.org/10.48677/5b510b4a-f592-4c02-991f-012cb1a65ea9) | |
+| 2 | Rasterzellen simplifizieren (*Focal Statistics, 10x10m mean*) | <img src="img/focal.png" alt="Screenshot vom Tool Focal Statistics mit Cell Size = 10" width="300"/> |
+| 3 | Zusammenfügen der Rasterzellen (*Mosaic to New Raster*) | <img src="img/mosaic.png" alt="Screenshot vom Tool Mosaic to New Raster" width="300"/> |
+| 4 | Extrahieren der Start- und Endpunkte (*Feature Vertices To Points*) <br> Layer mit Start Nodes <br> Layer mit End Nodes | <img src="img/vertices.png" alt="Screenshot vom Tool Feature Vertices To Points" width="300"/> |
+| 5 | Projizieren der Start- und End-Nodes auf DTM-Rasterzellen (*Extract Multi Values to Points*) | <img src="img/extract.png" alt="Screenshot vom Tool Extract Multi Values to Points" width="300"/> |
+| 6 | Join an Linknetz (*Join Field, FROM-Node, TO-Node*) | <img src="img/join.png" alt="Screenshot vom Tool Join Field" width="300"/> |
+| 7 | Gefälle berechnen: (Z_TO - Z_FROM) / !Shape_Length! x 100 | <img src="img/field_calc.png" alt="Screenshot vom Field Calculator" width="300"/> |
 
 #### Bike Network bauen
 1. Costs:
@@ -90,12 +91,12 @@ def restriction(bike):
 	- Löschen aller unbenötigten Spalten
 	
 #### Zusätzliche Layer laden & vorbereiten
-1. Administrative Grenzen
+1. [Administrative Grenzen](https://www.data.gv.at/katalog/de/dataset/stat_gliederung-osterreichs-in-gemeinden14f53)
 	- Bundesländer vereinfacht (*Simplify Polygon, Algorithm Wang-Müller, Tolerance 500 m*)
 	- Gemeinden
-2. Flüsse
+2. [Flüsse](https://www.data.gv.at/katalog/de/dataset/gesamtgewssernetzfliessgewsserrouten)
 	- nach Flussmenge eingefärbt
-3. Waldfläche
+3. [Waldfläche](https://www.data.gv.at/katalog/de/dataset/waldkarte-bfw-osterreich)
 
 ### Import von Zielen
 * Öffentliche Schulen nach [Bildungsstufe](https://de.wikipedia.org/wiki/Bildungssystem_in_%C3%96sterreich#/media/Datei:SCHULSYSTEM%C3%B6sterreich2.png)
