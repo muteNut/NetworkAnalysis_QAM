@@ -27,10 +27,10 @@ def time(slope, length):
     speedmm = speed * 1000 / 60 # in m/min
     slope = max(-25, min(25, slope))  # Begrenzung
 
-    if slope < 0:
+    if slope < -1:
         v = speedmm * pow(abs(slope), 1/3)
         return length / v # t = s / v (in m/min)
-    elif slope == 0:
+    elif slope >= -1 or slope <= 1:
         v = speedmm
         return length / speedmm # t = s / v (in m/min)
     else:
@@ -46,10 +46,10 @@ def time(slope, length):
     speedmm = speed * 1000 / 60 # in m/min
     slope = max(-25, min(25, slope))  # Begrenzung
 
-    if slope < 0:
+    if slope < -1:
         v = speedmm / pow(abs(slope), 1/3)
         return length / v # t = s / v (in m/min)
-    elif slope == 0:
+    elif slope >= -1 or slope <= 1:
         v = speedmm
         return length / speedmm # t = s / v (in m/min)
     else:
