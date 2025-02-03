@@ -16,7 +16,7 @@ Vorbereitung vom Datensatz in mehreren Schritten
 | 7 | Gefälle berechnen: (Z_TO - Z_FROM) / !Shape_Length! x 100 | <img src="img/field_calc.png" alt="Screenshot vom Field Calculator" width="300"/> |
 
 #### Bike Network bauen
-1. Costs:
+##### Costs:
 Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Ausreißer jenseits von 25% Gefälle werden bereinigt. 
 
 **Towards:**
@@ -61,7 +61,7 @@ def time(slope, length):
         v = speedmm * pow(slope, 1/3)
         return length / v # t = s / v (in m/min)
 ```
-2. Restrictions:
+##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (realitätsnähe?)
 
 **Towards:**
