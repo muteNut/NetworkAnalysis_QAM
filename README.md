@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b1c46c75-1692-49ae-a0f1-462a503f3a75)# Netzwerkanalyse
+# Netzwerkanalyse
 ## Vorgehensweise
 Allgemeine Methodologie für die Berechnung
 ### Vorbereitung
