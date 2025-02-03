@@ -54,6 +54,9 @@ from math import powdef time(slope, length):
         v = speedmm * pow(slope, 1/3)
         return length / v # t = s / v (in m/min)
 ```
+Die Geschwindigkeit verteilt sich daher abhängig vom Gefälle wie folgt:
+
+<img src="img/times.png" alt="Diagramm von Geschwindigkeit auf y-Achse und Gefälle auf x-Achse" width="500"/>
 ##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (realitätsnähe?)
 
