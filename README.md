@@ -57,6 +57,7 @@ from math import powdef time(slope, length):
 Die Geschwindigkeit verteilt sich daher abhängig vom Gefälle wie folgt:
 
 <img src="img/times.png" alt="Diagramm von Geschwindigkeit auf y-Achse und Gefälle auf x-Achse" width="500"/>
+
 ##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (realitätsnähe?)
 
