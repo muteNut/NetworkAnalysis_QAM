@@ -4,7 +4,7 @@ Allgemeine Methodologie für die Berechnung
 ### Vorbereitung
 Vorbereitung vom Datensatz in mehreren Schritten
 #### Gefälle für Bike-Network berechnen
-1. Herunterladen der DTM-Rasterzellen
+1. Herunterladen der [DTM-Rasterzellen](https://doi.org/10.48677/5b510b4a-f592-4c02-991f-012cb1a65ea9)
 2. Zusammenfügen der Rasterzellen (*Mosaic to New Raster*)
 3. Rasterzellen simplifizieren (*Focal Statistics, 10x10m mean*)
 4. Extrahieren der Start- und Endpunkte (*Feature Vertices To Points*)
@@ -98,7 +98,7 @@ def restriction(bike):
 3. Waldfläche
 
 ### Import von Zielen
-* Öffentliche Schulen nach Kategorie (siehe Grafik Bericht)
+* Öffentliche Schulen nach [Bildungsstufe](https://de.wikipedia.org/wiki/Bildungssystem_in_%C3%96sterreich#/media/Datei:SCHULSYSTEM%C3%B6sterreich2.png)
 	- Primärstufe:
 		- VS (Volksschule)
 		- SS (Sonderschule)
