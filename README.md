@@ -137,16 +137,15 @@ In den Maps wird nur exemplarisch eine Bildungsstufe dargestellt, z.B. Sekundars
 
   | Variable      | Bedeutung                          |
   |---------------|------------------------------------|
-  | $$ A_j $$     | Anzahl Kinder oder Hauptwohnsitze  |
-  | $$ t_{ij} $$  | Reisezeit |
-  | $$ \lambda $$ | Halbwertszeit |
-  $$
-  P = \sum_{j=1}^{n} A_j \cdot e^{\beta \cdot t_{ij}}
-  $$
-  wobei
-  $$
-  \beta = \frac{\ln(2)}{\lambda_t}
-  $$
+  | $` A_j `$     | Anzahl Kinder oder Hauptwohnsitze  |
+  | $` t_{ij} `$  | Reisezeit |
+  | $` \lambda `$ | Halbwertszeit |
+
+Die Formel dafür lautet:\
+  $P = \sum_{j=1}^{n} A_j \cdot e^{\beta \cdot t_{ij}}$
+wobei
+  $\beta = \frac{\ln(2)}{\lambda_t}$
+
 ### Vergleichende Darstellung bei konstanter Geschwindigkeit (?)
   Eventuell machen, vielleicht weglassen
 ## Diagramme
@@ -158,4 +157,5 @@ Wie Maps, aber für alle Bildungsstufen: Diagramm mit y = Zielgruppe, x = Zeitkl
 | Primär | 12 km/h |
 | Sekundär 1 | 16 km/h |
 | Sekundär 2 | 20 km/h |
+
 Anschließend Vergleich mit O-D ohne Gefälle.
