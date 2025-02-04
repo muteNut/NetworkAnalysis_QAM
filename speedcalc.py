@@ -28,38 +28,36 @@ CrDyn = 0.1 * cos(slope)
 afCm = 1.025
 afCdBike = 1.5
 
-# Functions
-def CrEff():
-    afLoadV = 0.4
-    afCCrV = 1.0
-    CrVH = 0.005 # Tourenreifen, CrV = CrH
-    return afLoadV * afCCrV * CrVH + (1.0 - afLoadV) * CrVH
+# CrEff
+afLoadV = 0.4
+afCCrV = 1.0
+CrVH = 0.005  # Tourenreifen, CrV = CrH
+CrEff = afLoadV * afCCrV * CrVH + (1.0 - afLoadV) * CrVH
 
-def CwaBike():
-    afAFrame = 0.048
-    afCATireV = 1.1
-    afCATireH = 0.9
-    ATireVH = 0.042  # Stirnfläche Reifen, ATireV = ATireH
-    return afCdBike * (afCATireV * ATireVH + afCATireH * ATireVH + afAFrame)
+# CwaBike
+afAFrame = 0.048
+afCATireV = 1.1
+afCATireH = 0.9
+ATireVH = 0.042  # Stirnfläche Reifen, ATireV = ATireH
+CwaBike = afCdBike * (afCATireV * ATireVH + afCATireH * ATireVH + afAFrame)
 
-def CwaRider():
-    cCad = .002
-    afSin = 0.89
-    afCd = 0.89
-    adipos = sqrt(m_rider/(h_rider*750))
-    return (1 + cad * cCad) * afCd * adipos * (((h_rider - adipos) * afSin) + adipos)
+# CwaRider
+cCad = .002
+afSin = 0.89
+afCd = 0.89
+adipos = sqrt(m_rider / (h_rider * 750))
+CwaRider = (1 + cad * cCad) * afCd * adipos * (((h_rider - adipos) * afSin) + adipos)
 
-def Frg():
-    g = 9.81
-    return g * (m_bike + m_rider) * (CrEff() * cos(slope) + sin(slope))
+# Frg
+g = 9.81
+Frg = g * (m_bike + m_rider) * (CrEff * cos(slope) + sin(slope))
 
-# Intermediate results
-Ka = 176.5 * exp(-altitude * .0001253) * (CwaRider() + CwaBike()) / (273 + temp)
-cardB = ((3 * Frg() - 4 * wind_speed * CrDyn) / (9 * Ka) - pow(CrDyn, 2) / (9 * pow(Ka, 2))
-         - (wind_speed * wind_speed) / 9)
-cardA = -((pow(CrDyn, 3) - pow(wind_speed, 3)) / 27
-          + wind_speed * (5*wind_speed*CrDyn + 4*pow(CrDyn, 2) / Ka - 6*Frg()) / (18 * Ka)
-          - power / (2*Ka*afCm) - CrDyn*Frg() / (6*pow(Ka, 2)))
+Ka = 176.5 * exp(-altitude * .0001253) * (CwaRider + CwaBike) / (273 + temp)
+cardB = ((3 * Frg - 4 * wind_speed * CrDyn) / (9 * Ka) - pow(CrDyn, 2) / (9 * pow(Ka, 2)) - (
+            wind_speed * wind_speed) / 9)
+cardA = -((pow(CrDyn, 3) - pow(wind_speed, 3)) / 27 + wind_speed * (
+            5 * wind_speed * CrDyn + 4 * pow(CrDyn, 2) / Ka - 6 * Frg) / (18 * Ka) - power / (
+                      2 * Ka * afCm) - CrDyn * Frg / (6 * pow(Ka, 2)))
 sq = pow(cardA, 2) + pow(cardB, 3)
 
 # calculate velocity
@@ -75,4 +73,4 @@ else:
 Vms -= 2*wind_speed/3 + CrDyn/(3*Ka)
 
 # basic output
-print(" Vkmh:", Vms*3.6, "\n", "Cr:", CrEff(), "\n", "Cd*A:", CwaRider() + CwaBike())
+print(" Vkmh:", Vms*3.6, "\n", "Cr:", CrEff, "\n", "Cd*A:", CwaRider + CwaBike)
