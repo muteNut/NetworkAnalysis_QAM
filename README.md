@@ -17,7 +17,8 @@ Vorbereitung vom Datensatz in mehreren Schritten
 
 #### Bike Network bauen
 ##### Costs:
-Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Ausreißer jenseits von 25% Gefälle werden bereinigt. 
+Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Ausreißer jenseits von 25% Gefälle werden bereinigt.
+Eine [realitätsnähere Berechnungsmethode](speedcalc.py) wäre auch möglich.
 
 **Towards:**
 ```python
