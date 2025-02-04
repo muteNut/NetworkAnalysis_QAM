@@ -18,44 +18,38 @@ Vorbereitung vom Datensatz in mehreren Schritten
 #### Bike Network bauen
 ##### Costs:
 Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Ausreißer jenseits von 25% Gefälle werden bereinigt.
-Eine [realitätsnähere Berechnungsmethode](speedcalc.py) wäre auch möglich.
+Eine [realitätsnähere Berechnungsmethode](speedcalc.py) wäre vielleicht möglich...
 
 **Towards:**
 ```python
 from math import pow
-def time(slope, length):
-    speed = 20 # km/h
-    speedmm = speed * 1000 / 60 # in m/min
-    slope = max(-25, min(25, slope))  # Begrenzung
 
+def time(slope, length):
+    speedmm = 20 * 1000 / 60  # km/h in m/min
+    slope = max(-25, min(25, slope))  # Begrenzung
     if slope < -1:
-        v = speedmm * pow(abs(slope), 1/3)
-        return length / v # t = s / v (in m/min)
-    elif slope >= -1 or slope <= 1:
+        v = speedmm * pow(abs(slope), 1./3)
+    elif slope >= -1 and slope <= 1:
         v = speedmm
-        return length / speedmm # t = s / v (in m/min)
     else:
-        v = speedmm / pow(slope, 1/3)
-        return length / v # t = s / v (in m/min)
+        v = speedmm / pow(abs(slope), 1./3)
+    return length / v  # t = s / v (in m/min)
 ```
 
 **Backwards:**
 ```python
 from math import pow
-def time(slope, length):
-    speed = 20 # km/h
-    speedmm = speed * 1000 / 60 # in m/min
-    slope = max(-25, min(25, slope))  # Begrenzung
 
+def time(slope, length):
+    speedmm = 20 * 1000 / 60 # km/h in m/min
+    slope = max(-25, min(25, slope))  # Begrenzung
     if slope < -1:
-        v = speedmm / pow(abs(slope), 1/3)
-        return length / v # t = s / v (in m/min)
-    elif slope >= -1 or slope <= 1:
+        v = speedmm / pow(abs(slope), 1./3)
+    elif slope >= -1 and slope <= 1:
         v = speedmm
-        return length / speedmm # t = s / v (in m/min)
     else:
-        v = speedmm * pow(slope, 1/3)
-        return length / v # t = s / v (in m/min)
+        v = speedmm * pow(abs(slope), 1./3)
+    return length / v # t = s / v (in m/min)
 ```
 Die Geschwindigkeit verteilt sich daher abhängig vom Gefälle wie folgt:
 
