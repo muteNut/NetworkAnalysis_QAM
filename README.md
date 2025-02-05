@@ -107,13 +107,13 @@ def restriction(bike):
 In den Maps wird nur exemplarisch eine Bildungsstufe dargestellt, z.B. Sekundarstufe 1
 
 ### Einzugsbereiche je Schultyp
-- Cutoffs noch festzulegen
+- Cutoff: 15km, dann Zuschlag je eine Minute am Quell- und Zielort und filtern nach 30 Minuten Fahrzeit.
 - Darstellung von erreichbaren Rasterzellen (!), daher auf Grundlage von O-D-Matrix ausarbeiten
-### Fahrzeit nur nächsten Schule je Rasterzelle
+### Fahrzeit zur nächsten Schule je Rasterzelle
 - Auf Basis von O-D-Matrix, nur Rang 1
 - Darstellung auf Rasterebene
 ### Anzahl erreichbarer Schulen in Zeitraum
-- noch festzulegen, z.B. in unter 30 Minuten
+- in unter [27 Minuten](https://www.statistik.at/statistiken/arbeitsmarkt/erwerbstaetigkeit/arbeitsort-und-pendeln)
 - Auf Basis von O-D-Matrix, Join mit Rasterzellen
 - Darstellung auf Rasterebene
 ### Mittlere Reisedauer je Gemeinde
@@ -146,4 +146,4 @@ Wie Maps, aber für alle Bildungsstufen: Diagramm mit y = Zielgruppe, x = Zeitkl
 | Sekundär 1 | 16 km/h |
 | Sekundär 2 | 20 km/h |
 
-Anschließend Vergleich mit O-D ohne Gefälle.
+Anschließend Vergleich mit O-D ohne Gefälle (Delta).
