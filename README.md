@@ -66,6 +66,14 @@ Das [Script](speedcalc.py) kann in ArcGIS geladen werden. Für die Fahrtrichtung
 ```
 speedcalc(!SLOPE!, !Shape_Length!, !Z_Start!, !Z_End!)
 ```
+##### Kennzahlen für Zielgruppen
+Die Parameter wurden grob abgeschätzt.
+Die Kennzahlen für Körperhöhe und Gewicht sind Mittelwerte [dieser Tabelle](https://www.atlasrepos.ch/gewicht-kinder/), die Berechnung der Leistung basiert auf dem mittleren FTP (W/kg) im Profil *fair* von [Polar](https://support.polar.com/ch-de/ftp-class-table).
+| Alter | Größe | Gewicht | Leistung |
+|-|-|-|-|
+| 5 - 9 | 1.27 | 27 | 66.3 |
+| 10 - 14 | 1.56 | 48.7 | 119.2 |
+| 15 - 19 | 1.71 | 67 | 163 |
 
 ##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (Realitätsnähe?)
