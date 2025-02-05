@@ -53,9 +53,14 @@ def time(slope, length):
 ```
 Die Geschwindigkeit und Fahrzeit verteilt sich daher abhängig vom Gefälle wie folgt:
 
-<img src="img/times.png" alt="Diagramm von Geschwindigkeit auf y-Achse und Gefälle auf x-Achse" width="500"/>
+<img src="img/times.png" alt="Diagramm von Fahrzeit und Geschwindigkeit auf y-Achse, Gefälle auf x-Achse" width="500"/>
 
 Für Fahrtrichtung Backwards ist die Funktion umgekehrt.
+
+#### Physikalisches Modell
+Das Diagramm zeigt den Vergleich zwischen dem vereinfachten Modell mit Wurzelfunktion und einem physikalischen Modell nach [Walter Zorn](http://kreuzotter.de/deutsch/speed.htm). Als Parameter wurde eine Gesamtmasse von 80kg bei Körperhöhe von 1.70m und einer Leistung von 200 Watt bei einer Kadenz von 90 rpm gewählt. Für Luft- und Rollwiderstandswerte wurde ein Rennrad bei aufrechter Sitzposition mit Tourenreifen (*vgl. Gravelbike*) angenommen. Die Seehöhe wird vereinfacht mit konstant 250m gleichgesetzt, die Windgeschwindigkeit mit 0 km/h.
+
+<img src="img/phys_times.png" alt="Diagramm von Fahrzeit und Geschwindigkeit auf y-Achse, Gefälle auf x-Achse. Überlagerung mit dem vereinfachte Modell (Wurzelfunktion)" width="500"/>
 
 ##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (Realitätsnähe?)
