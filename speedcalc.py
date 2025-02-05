@@ -5,17 +5,17 @@ Basierend auf http://www.kreuzotter.de/deutsch/speed.htm (Walter Zorn)
 Für Nutzung in ArcGIS:
 Konstanten für Gewichte, Körperhöhe und Power Output festlegen und aus Funktionsdefinition entfernen
 d. h. gew_r, gew_b, h_r, p_r
-return statement tauschen durch die auskommentierte Variante
 '''
 
 from math import atan, cos, sin, sqrt, exp, pow, acos
 from numpy import cbrt, float64
-def speedcalc(slp, length, gew_r, gew_b, h_r, p_r, z_s, z_e):
+
+def speedcalc(slp, length, z_s, z_e):
     # Rider Properties
-    m_rider = gew_r # 40 # --> je Altersklasse in kg
-    m_bike = gew_b # 10 # --> je Altersklasse, z.B. woom
-    h_rider = h_r # 1.45 # je Altersklasse in m
-    power = p_r # 100 # in Watt --> je Altersklasse anpassen
+    m_rider = 50 # kg
+    m_bike = 10 # kg
+    h_rider = 1.45 # m
+    power = 100 # W
     cad = 90 # rpm trittgeschwindigkeit (cadence)
 
     # Environment Properties
@@ -74,9 +74,9 @@ def speedcalc(slp, length, gew_r, gew_b, h_r, p_r, z_s, z_e):
     Vms -= 2*wind_speed/3 + CrDyn/(3*Ka)
     Vms = float64(Vms)
     Vms = Vms.item()
-    # return round((length / Vms / 60),3), round((Vms * 3.6), 3)
-    return f"Fahrzeit: {round((length / Vms / 60),3)} min, Geschindigkeit: {round((Vms * 3.6), 3)} km/h"
+    return round((length / Vms / 60),3)
+    # return f"Fahrzeit: {round((length / Vms / 60),3)} min, Geschindigkeit: {round((Vms * 3.6), 3)} km/h"
 
 
 # basic output
-print(speedcalc(slp=-5, length=1000, gew_r=70, gew_b=10, h_r=1.7, p_r=200, z_s=300, z_e=250))
+# print(speedcalc(slp=-5, length=1000, gew_r=70, gew_b=10, h_r=1.7, p_r=200, z_s=300, z_e=250))
