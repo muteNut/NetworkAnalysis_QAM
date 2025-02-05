@@ -51,9 +51,11 @@ def time(slope, length):
         v = speedmm * pow(abs(slope), 1./3)
     return length / v # t = s / v (in m/min)
 ```
-Die Geschwindigkeit verteilt sich daher abhängig vom Gefälle wie folgt:
+Die Geschwindigkeit und Fahrzeit verteilt sich daher abhängig vom Gefälle wie folgt:
 
 <img src="img/times.png" alt="Diagramm von Geschwindigkeit auf y-Achse und Gefälle auf x-Achse" width="500"/>
+
+Für Fahrtrichtung Backwards ist die Funktion umgekehrt.
 
 ##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (Realitätsnähe?)
