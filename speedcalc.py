@@ -10,7 +10,7 @@ return statement tauschen durch die auskommentierte Variante
 
 from math import atan, cos, sin, sqrt, exp, pow, acos
 from numpy import cbrt, float64
-def speedcalc(slp, length, gew_r, gew_b, h_r, p_r):
+def speedcalc(slp, length, gew_r, gew_b, h_r, p_r, z_s, z_e):
     # Rider Properties
     m_rider = gew_r # 40 # --> je Altersklasse in kg
     m_bike = gew_b # 10 # --> je Altersklasse, z.B. woom
@@ -20,7 +20,7 @@ def speedcalc(slp, length, gew_r, gew_b, h_r, p_r):
 
     # Environment Properties
     temp = 20 # celsius
-    altitude = 250 # int((Z_Start + Z_End)/2) statt 300
+    altitude = int((z_s + z_e) * 0.5)
     slp = atan(slp * 0.01) # SLOPE statt 1
     wind_speed = 0 * .27778 # rückenwind = negative werte
 
@@ -79,4 +79,4 @@ def speedcalc(slp, length, gew_r, gew_b, h_r, p_r):
 
 
 # basic output
-print(speedcalc(slp=-5, length=1000, gew_r=70, gew_b=10, h_r=1.7, p_r=200))
+print(speedcalc(slp=-5, length=1000, gew_r=70, gew_b=10, h_r=1.7, p_r=200, z_s=300, z_e=250))
