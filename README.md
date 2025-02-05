@@ -18,7 +18,7 @@ Vorbereitung vom Datensatz in mehreren Schritten
 #### Bike Network bauen
 ##### Costs:
 Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Ausreißer jenseits von 25% Gefälle werden bereinigt.
-Eine [realitätsnähere Berechnungsmethode](speedcalc.py) wäre vielleicht möglich...
+Eine [realitätsnähere Berechnungsmethode](#physikalisches-modell) ist ebenso möglich.
 
 **Towards:**
 ```python
@@ -61,6 +61,11 @@ Für Fahrtrichtung Backwards ist die Funktion umgekehrt.
 Das Diagramm zeigt den Vergleich zwischen dem vereinfachten Modell mit Wurzelfunktion und einem physikalischen Modell nach [Walter Zorn](http://kreuzotter.de/deutsch/speed.htm). Als Parameter wurde eine Gesamtmasse von 80kg bei Körperhöhe von 1.70m und einer Leistung von 200 Watt bei einer Kadenz von 90 rpm gewählt. Für Luft- und Rollwiderstandswerte wurde ein Rennrad bei aufrechter Sitzposition mit Tourenreifen (*vgl. Gravelbike*) angenommen. Die Seehöhe wird vereinfacht mit konstant 250m gleichgesetzt, die Windgeschwindigkeit mit 0 km/h.
 
 <img src="img/phys_times.png" alt="Diagramm von Fahrzeit und Geschwindigkeit auf y-Achse, Gefälle auf x-Achse. Überlagerung mit dem vereinfachte Modell (Wurzelfunktion)" width="500"/>
+
+Das [Script](speedcalc.py) kann in ArcGIS geladen werden. Für die Fahrtrichtung *backwards* muss nur das Vorzeichen von *Slope* umgekehrt werden. Parameter wie z.B. Gewicht müssen in der Funktion als Konstante definiert sein. Die Definition von *value* ist:
+```
+speedcalc(!SLOPE!, !Shape_Length!, !Z_Start!, !Z_End!)
+```
 
 ##### Restrictions:
 Befahrbarkeit für Fahrrad erlaubt (Realitätsnähe?)
