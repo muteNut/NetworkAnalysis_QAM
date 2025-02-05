@@ -16,7 +16,7 @@ Vorbereitung vom Datensatz in mehreren Schritten
 | 7 | Gefälle berechnen: (Z_TO - Z_FROM) / !Shape_Length! x 100 | <img src="img/field_calc.png" alt="Screenshot vom Field Calculator" width="300"/> |
 
 #### Bike Network bauen
-##### Costs:
+##### Costs (non-physical):
 Dritte Wurzel von Slope in Verbindung mit Distanz, Base Speed = 20 km/h. Die Ausreißer jenseits von 25% Gefälle werden bereinigt.
 Eine [realitätsnähere Berechnungsmethode](#physikalisches-modell) ist ebenso möglich.
 
@@ -66,10 +66,10 @@ Das [Script](speedcalc.py) kann in ArcGIS geladen werden. Für die Fahrtrichtung
 ```
 speedcalc(!SLOPE!, !Shape_Length!, !Z_Start!, !Z_End!)
 ```
-##### Kennzahlen für Zielgruppen
+##### Kennzahlen für Zielgruppen (physical model)
 Die Parameter wurden grob abgeschätzt.
-Die Kennzahlen für Körperhöhe und Gewicht sind Mittelwerte [dieser Tabelle](https://www.atlasrepos.ch/gewicht-kinder/), die Berechnung der Leistung basiert auf dem mittleren FTP (W/kg) im Profil *fair* von [Polar](https://support.polar.com/ch-de/ftp-class-table).
-| Alter | Größe | Gewicht | Leistung |
+Die Kennzahlen für Körperhöhe und Gewicht sind Mittelwerte [dieser Tabelle](https://www.atlasrepos.ch/gewicht-kinder/), die Berechnung der Leistung basiert auf dem mittleren FTP (W/kg) im Profil *fair* von [Polar](https://support.polar.com/ch-de/ftp-class-table). Masse des Rads wird mit konstant 10 kg angenommen.
+| Alter | Größe `[m]` | Gewicht `[kg]` | Leistung `[W]` |
 |-|-|-|-|
 | 5 - 9 | 1.27 | 27 | 66.3 |
 | 10 - 14 | 1.56 | 48.7 | 119.2 |
@@ -158,12 +158,5 @@ wobei
   Eventuell machen, vielleicht weglassen
 ## Diagramme
 Wie Maps, aber für alle Bildungsstufen: Diagramm mit y = Zielgruppe, x = Zeitklasse
-### Base Speed anpassen 
-
-| Bildungsstufe | Geschwindigkeit |
-|---------------|-----------------|
-| Primär | 12 km/h |
-| Sekundär 1 | 16 km/h |
-| Sekundär 2 | 20 km/h |
 
 Anschließend Vergleich mit O-D ohne Gefälle (Delta).
