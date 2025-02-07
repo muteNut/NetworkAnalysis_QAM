@@ -5,6 +5,7 @@ Basierend auf http://www.kreuzotter.de/deutsch/speed.htm (Walter Zorn)
 Für Nutzung in ArcGIS:
 Konstanten für Gewichte, Körperhöhe und Power Output anpassen
 d. h. m_rider, m_bike, h_rider, power
+Value benötigt Slope, Length, Z_Start und Z_End von Linknetz-Layer
 '''
 
 from math import atan, cos, sin, sqrt, exp, pow, acos
