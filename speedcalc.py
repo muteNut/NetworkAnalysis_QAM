@@ -3,8 +3,8 @@ Geschwindigkeitsberechnung basierend auf physikalischen Kennzahlen.
 Basierend auf http://www.kreuzotter.de/deutsch/speed.htm (Walter Zorn)
 
 Für Nutzung in ArcGIS:
-Konstanten für Gewichte, Körperhöhe und Power Output festlegen und aus Funktionsdefinition entfernen
-d. h. gew_r, gew_b, h_r, p_r
+Konstanten für Gewichte, Körperhöhe und Power Output anpassen
+d. h. m_rider, m_bike, h_rider, power
 '''
 
 from math import atan, cos, sin, sqrt, exp, pow, acos
