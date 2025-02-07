@@ -128,13 +128,13 @@ In den Maps wird nur exemplarisch eine Bildungsstufe dargestellt, z.B. Sekundars
 
 ### Einzugsbereiche je Schultyp
 - Cutoff: 15km, dann Zuschlag je eine Minute am Quell- und Zielort und filtern nach 30 Minuten Fahrzeit.
-- Darstellung von erreichbaren Rasterzellen (!), daher auf Grundlage von O-D-Matrix ausarbeiten
+- Darstellung von erreichbaren Rasterzellen (!), daher auf Grundlage von O-D-Matrize ausarbeiten
 ### Fahrzeit zur nächsten Schule je Rasterzelle
-- Auf Basis von O-D-Matrix, nur Rang 1
+- Auf Basis von O-D-Matrize, nur Rang 1
 - Darstellung auf Rasterebene
 ### Anzahl erreichbarer Schulen in Zeitraum
 - in unter [27 Minuten](https://www.statistik.at/statistiken/arbeitsmarkt/erwerbstaetigkeit/arbeitsort-und-pendeln)
-- Auf Basis von O-D-Matrix, Join mit Rasterzellen
+- Auf Basis von O-D-Matrize, Join mit Rasterzellen
 - Darstellung auf Rasterebene
 ### Mittlere Reisedauer je Gemeinde
 - gew. nach Bevölkerung und Schultyp: Zuweisung von Rastermittelpunkt zu Gemeinde, Weg zu nächster Schule; Aggregieren auf Gemeindeebene mit betr. Bevölkerung (Kinder)
