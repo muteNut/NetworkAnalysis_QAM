@@ -68,7 +68,7 @@ speedcalc(!SLOPE!, !Shape_Length!, !Z_Start!, !Z_End!)
 ```
 ##### Kennzahlen für Zielgruppen (physical model)
 Die Parameter wurden grob abgeschätzt.
-Die Kennzahlen für Körperhöhe und Gewicht sind Mittelwerte [dieser Tabelle](https://www.atlasrepos.ch/gewicht-kinder/), die Berechnung der Leistung basiert auf dem mittleren FTP (W/kg) im Profil *fair* von [Polar](https://support.polar.com/ch-de/ftp-class-table). Masse des Rads wird mit konstant 10 kg angenommen.
+Die Kennzahlen für Körperhöhe und Gewicht sind Mittelwerte [dieser Tabelle](https://www.atlasrepos.ch/gewicht-kinder/), die Berechnung der Leistung basiert auf dem mittleren FTP (W/kg) im Profil *fair* von [Polar](https://support.polar.com/ch-de/ftp-class-table). Masse des Rads wird mit konstant 10 kg angenommen. Für den täglichen Pendelweg wird eine Leistung von 60% des FTP angenommen, in der Tabelle sind die absoluten Werte angeführt.
 | Alter | Größe `[m]` | Gewicht `[kg]` | Leistung `[W]` |
 |-|-|-|-|
 | 5 - 9 | 1.27 | 27 | 66.3 |
