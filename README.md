@@ -13,7 +13,7 @@ Vorbereitung vom Datensatz in mehreren Schritten
 | 4 | Extrahieren der Start- und Endpunkte (*Feature Vertices To Points*) <br> Layer mit Start Nodes <br> Layer mit End Nodes | <img src="img/vertices.png" alt="Screenshot vom Tool Feature Vertices To Points" width="300"/> |
 | 5 | Projizieren der Start- und End-Nodes auf DTM-Rasterzellen (*Extract Multi Values to Points*) | <img src="img/extract.png" alt="Screenshot vom Tool Extract Multi Values to Points" width="300"/> |
 | 6 | Join an Linknetz (*Join Field, FROM-Node, TO-Node*) | <img src="img/join.png" alt="Screenshot vom Tool Join Field" width="300"/> |
-| 7 | Gefälle berechnen: (Z_TO - Z_FROM) / !Shape_Length! x 100 | <img src="img/field_calc.png" alt="Screenshot vom Field Calculator" width="300"/> |
+| 7 | Gefälle berechnen: (!Z_TO! - !Z_FROM!) / !Shape_Length! x 100 | <img src="img/field_calc.png" alt="Screenshot vom Field Calculator" width="300"/> |
 
 #### Bike Network bauen
 ##### Costs (non-physical):
